@@ -1,0 +1,166 @@
+{
+  "subreddits": [
+    {
+      "name": "entrepreneur",
+      "displayName": "r/entrepreneur",
+      "subscribers": "3.2M",
+      "description": "Pair entrepreneurs with mentors, technologists, and business people",
+      "rules": [
+        "No direct self-promotion or links to your own business",
+        "No referral codes or affiliate links",
+        "Context and value must come before any mention of your product",
+        "Store/Business feedback requests only in designated threads",
+        "No low-effort posts or one-liners"
+      ],
+      "bestPractices": [
+        "Share learnings and failures, not just successes",
+        "Frame posts as lessons learned or questions",
+        "Engage genuinely in comments",
+        "Story-based posts perform best"
+      ],
+      "allowsProductMention": false,
+      "bestPostTypes": ["storytelling", "experience", "suggestion"],
+      "peakPostingTimes": ["Tuesday 9-11 AM EST", "Wednesday 10 AM EST", "Thursday 2 PM EST"]
+    },
+    {
+      "name": "startups",
+      "displayName": "r/startups",
+      "subscribers": "1.2M",
+      "description": "Discussion of startups, technology, and growing businesses",
+      "rules": [
+        "No direct advertisements or promotional posts",
+        "Share Saturday is the only time for self-promo",
+        "Provide value in every post",
+        "No asking for feedback without substantial context",
+        "Follow Reddit's content policy"
+      ],
+      "bestPractices": [
+        "Deep-dive case studies work well",
+        "Numbers and specific metrics get engagement",
+        "Be vulnerable about challenges",
+        "Ask genuine questions"
+      ],
+      "allowsProductMention": false,
+      "bestPostTypes": ["storytelling", "experience"],
+      "peakPostingTimes": ["Monday 10 AM EST", "Wednesday 9 AM EST"]
+    },
+    {
+      "name": "SaaS",
+      "displayName": "r/SaaS",
+      "subscribers": "150K",
+      "description": "Community for SaaS founders, marketers, and enthusiasts",
+      "rules": [
+        "Self-promotion allowed in moderation",
+        "Must provide value alongside any promotion",
+        "No spam or repetitive posting",
+        "Engage with comments on your posts"
+      ],
+      "bestPractices": [
+        "Share specific growth tactics",
+        "Behind-the-scenes content works well",
+        "Monthly revenue updates get engagement",
+        "Tool recommendations are appreciated"
+      ],
+      "allowsProductMention": true,
+      "bestPostTypes": ["storytelling", "experience", "promotional"],
+      "peakPostingTimes": ["Tuesday 11 AM EST", "Thursday 2 PM EST"]
+    },
+    {
+      "name": "marketing",
+      "displayName": "r/marketing",
+      "subscribers": "850K",
+      "description": "Discussion of marketing strategies and tactics",
+      "rules": [
+        "No self-promotion or spam",
+        "Links must add value to discussion",
+        "Be respectful and constructive",
+        "No job postings outside designated threads"
+      ],
+      "bestPractices": [
+        "Data-backed insights perform well",
+        "Ask for opinions on strategies",
+        "Share case studies without naming your company",
+        "Tactical how-tos are popular"
+      ],
+      "allowsProductMention": false,
+      "bestPostTypes": ["experience", "suggestion"],
+      "peakPostingTimes": ["Wednesday 10 AM EST", "Friday 9 AM EST"]
+    },
+    {
+      "name": "sales",
+      "displayName": "r/sales",
+      "subscribers": "250K",
+      "description": "Community for sales professionals",
+      "rules": [
+        "No spam or excessive self-promotion",
+        "Be helpful and constructive",
+        "Sales tips must be actionable",
+        "Respect other members"
+      ],
+      "bestPractices": [
+        "Share cold outreach templates that worked",
+        "Discuss tools without being promotional",
+        "Celebrate wins and discuss losses",
+        "Tactical advice gets upvotes"
+      ],
+      "allowsProductMention": false,
+      "bestPostTypes": ["experience", "suggestion"],
+      "peakPostingTimes": ["Monday 9 AM EST", "Thursday 10 AM EST"]
+    },
+    {
+      "name": "growthacking",
+      "displayName": "r/growthacking",
+      "subscribers": "85K",
+      "description": "Growth hacking strategies and tactics",
+      "rules": [
+        "Share actionable growth tactics",
+        "No low-quality content",
+        "Self-promotion must add value",
+        "Engage with the community"
+      ],
+      "bestPractices": [
+        "Step-by-step growth experiments",
+        "Before/after metrics",
+        "Unconventional tactics work well",
+        "Tool stacks and automation tips"
+      ],
+      "allowsProductMention": true,
+      "bestPostTypes": ["storytelling", "experience", "promotional"],
+      "peakPostingTimes": ["Tuesday 2 PM EST", "Thursday 11 AM EST"]
+    },
+    {
+      "name": "smallbusiness",
+      "displayName": "r/smallbusiness",
+      "subscribers": "1.5M",
+      "description": "Community for small business owners",
+      "rules": [
+        "No advertising or self-promotion",
+        "Be helpful and supportive",
+        "No asking what business to start",
+        "Specific questions only"
+      ],
+      "bestPractices": [
+        "Share operational insights",
+        "Discuss real challenges faced",
+        "Ask for genuine advice",
+        "Help others with your expertise"
+      ],
+      "allowsProductMention": false,
+      "bestPostTypes": ["experience", "suggestion"],
+      "peakPostingTimes": ["Monday 10 AM EST", "Wednesday 2 PM EST"]
+    },
+    {
+      "name": "Entrepreneur",
+      "displayName": "r/Entrepreneur (alternate)",
+      "subscribers": "3.2M",
+      "description": "Same as entrepreneur - capitalization variant",
+      "rules": [],
+      "bestPractices": [],
+      "allowsProductMention": false,
+      "bestPostTypes": ["storytelling"],
+      "peakPostingTimes": []
+    }
+  ],
+  "lastUpdated": "2026-01-18",
+  "version": "1.0"
+}
