@@ -10,6 +10,8 @@ import {
     Clock
 } from "lucide-react";
 import { GeneratedPost, SubredditConfig } from '@/lib/types';
+import { GlowingCard } from '@/components/ui/glowing-card';
+import { TextShimmer } from '@/components/ui/text-shimmer';
 
 interface DashboardViewProps {
     savedPosts: GeneratedPost[];
@@ -33,28 +35,32 @@ export function DashboardView({
         return 'text-red-400';
     };
 
+    const glowColors = ['#6D5AFF', '#00D9FF', '#00FF88', '#FFB800'];
+
     return (
         <div className="space-y-8 animate-fade-in">
             <div>
-                <h2 className="text-3xl font-bold mb-2 tracking-tight">Welcome back, Aniruddh 👋</h2>
+                <h2 className="text-3xl font-bold mb-2 tracking-tight">
+                    Welcome back, <TextShimmer>Aniruddh</TextShimmer> 👋
+                </h2>
                 <p className="text-muted-foreground text-base mb-8">Here&apos;s your Reddit marketing overview</p>
             </div>
 
-            {/* Stats */}
+            {/* Stats - with GlowingCard */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {[
-                    { label: 'Posts Generated', value: savedPosts.length.toString(), icon: FileText, color: 'text-primary' },
-                    { label: 'Subreddits Active', value: subreddits.length.toString(), icon: Users, color: 'text-blue-400' },
-                    { label: 'Avg Compliance', value: '8.5', icon: CheckCircle, color: 'text-green-400' },
-                    { label: 'This Week', value: savedPosts.filter(p => new Date(p.createdAt) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)).length.toString(), icon: Calendar, color: 'text-yellow-400' },
+                    { label: 'Posts Generated', value: savedPosts.length.toString(), icon: FileText, color: 'text-[#6D5AFF]' },
+                    { label: 'Subreddits Active', value: subreddits.length.toString(), icon: Users, color: 'text-[#00D9FF]' },
+                    { label: 'Avg Compliance', value: '8.5', icon: CheckCircle, color: 'text-[#00FF88]' },
+                    { label: 'This Week', value: savedPosts.filter(p => new Date(p.createdAt) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)).length.toString(), icon: Calendar, color: 'text-[#FFB800]' },
                 ].map((stat, i) => (
-                    <div key={i} className="card hover:border-primary/50 transition-all duration-200">
+                    <GlowingCard key={i} glowColor={glowColors[i]}>
                         <div className="flex items-center justify-between mb-4">
                             <stat.icon className={`w-6 h-6 ${stat.color}`} />
                             <span className={`text-3xl font-bold ${stat.color}`}>{stat.value}</span>
                         </div>
                         <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
-                    </div>
+                    </GlowingCard>
                 ))}
             </div>
 
