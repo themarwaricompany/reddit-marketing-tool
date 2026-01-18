@@ -10,6 +10,7 @@ import {
     Clock
 } from "lucide-react";
 import { GeneratedPost, SubredditConfig } from '@/lib/types';
+import { Button as MovingBorderCard } from "@/components/ui/moving-border";
 
 interface DashboardViewProps {
     savedPosts: GeneratedPost[];
@@ -48,12 +49,21 @@ export function DashboardView({
                     { label: 'Avg Compliance', value: '8.5', icon: CheckCircle, color: 'text-green-400' },
                     { label: 'This Week', value: savedPosts.filter(p => new Date(p.createdAt) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)).length.toString(), icon: Calendar, color: 'text-yellow-400' },
                 ].map((stat, i) => (
-                    <div key={i} className="card hover:border-primary/50 transition-all duration-200">
-                        <div className="flex items-center justify-between mb-4">
-                            <stat.icon className={`w-6 h-6 ${stat.color}`} />
-                            <span className={`text-3xl font-bold ${stat.color}`}>{stat.value}</span>
-                        </div>
-                        <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
+                    <div key={i} className="relative group">
+                        <MovingBorderCard
+                            borderRadius="1rem"
+                            className="bg-card text-card-foreground border-neutral-200 dark:border-slate-800"
+                            containerClassName="h-32 w-full"
+                            borderClassName="bg-[var(--color-secondary)] opacity-50"
+                        >
+                            <div className="flex flex-col justify-between w-full h-full p-6">
+                                <div className="flex items-center justify-between mb-4">
+                                    <stat.icon className={`w-6 h-6 ${stat.color}`} />
+                                    <span className={`text-3xl font-bold ${stat.color}`}>{stat.value}</span>
+                                </div>
+                                <p className="text-sm font-medium text-muted-foreground text-left">{stat.label}</p>
+                            </div>
+                        </MovingBorderCard>
                     </div>
                 ))}
             </div>

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import ShimmerButton from "@/components/ui/shimmer-button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 
@@ -61,16 +62,24 @@ export function SideNav({ activeSection, setActiveSection }: SideNavProps) {
                                 variant="ghost"
                                 onClick={() => setActiveSection(item.id)}
                                 className={cn(
-                                    "w-full justify-start gap-3 h-12 px-4 rounded-xl text-sm font-medium transition-all duration-200",
+                                    "relative w-full justify-start gap-3 h-12 px-4 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group",
                                     isActive
-                                        ? "bg-primary text-white shadow-md shadow-primary/25 hover:bg-primary hover:text-white"
-                                        : "text-muted-foreground hover:text-white hover:bg-white/5"
+                                        ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-primary)]/25 hover:bg-[var(--color-primary)] hover:text-white"
+                                        : "text-muted-foreground hover:bg-[rgba(107,90,255,0.1)] hover:text-white"
                                 )}
                             >
-                                <Icon className={cn("w-5 h-5", isActive ? "text-white" : "text-muted-foreground group-hover:text-white")} />
+                                {!isActive && (
+                                    <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--color-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                )}
+                                <Icon className={cn("w-5 h-5 transition-colors duration-300",
+                                    isActive
+                                        ? "text-white"
+                                        : "text-muted-foreground group-hover:text-[var(--color-secondary)]"
+                                )} />
                                 {item.label}
                             </Button>
                         );
+
                     })}
                 </nav>
             </ScrollArea>
@@ -84,13 +93,15 @@ export function SideNav({ activeSection, setActiveSection }: SideNavProps) {
                         </div>
                         <span className="text-sm font-semibold text-foreground">Quick Actions</span>
                     </div>
-                    <Button
+                    <ShimmerButton
                         onClick={() => setActiveSection('generate')}
-                        className="w-full bg-white text-black hover:bg-white/90 font-semibold rounded-xl h-10 shadow-sm"
+                        className="w-full text-white font-semibold rounded-xl h-10 shadow-sm"
+                        background="var(--color-primary)"
+                        shimmerColor="var(--color-secondary)"
                     >
                         <Sparkles className="w-4 h-4 mr-2" />
                         New Post
-                    </Button>
+                    </ShimmerButton>
                 </div>
             </div>
         </aside>

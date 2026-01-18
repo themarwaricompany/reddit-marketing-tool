@@ -11,7 +11,9 @@ import {
     Star,
     Info
 } from 'lucide-react';
+
 import { GeneratedPost, SubredditConfig } from '@/lib/types';
+import ShimmerButton from "@/components/ui/shimmer-button";
 
 interface GeneratePostViewProps {
     subreddits: SubredditConfig[];
@@ -225,17 +227,19 @@ export function GeneratePostView({
                 </div>
 
                 {/* Generate Button */}
-                <button
+                <ShimmerButton
                     onClick={generatePosts}
                     disabled={isGenerating || !topic.trim() || selectedSubreddits.length === 0}
-                    className="btn-primary w-full justify-center h-11 text-base shadow-lg shadow-primary/25"
+                    className="w-full justify-center h-11 text-base shadow-lg shadow-primary/25 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
+                    background="var(--color-primary)"
+                    shimmerColor="var(--color-secondary)"
                 >
                     {isGenerating ? (
                         <><Loader2 className="w-5 h-5 animate-spin" /> Generating...</>
                     ) : (
                         <><Sparkles className="w-5 h-5" /> Generate for {selectedSubreddits.length || 0} Subreddit{selectedSubreddits.length !== 1 ? 's' : ''}</>
                     )}
-                </button>
+                </ShimmerButton>
             </div>
 
             {/* Right Column - Generated Posts */}
