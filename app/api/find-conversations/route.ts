@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
         if (geminiKey && scoredPosts.length > 0) {
             try {
                 const genAI = new GoogleGenerativeAI(geminiKey);
-                const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+                const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
                 const prompt = buildConversationScoringPrompt({
                     posts: scoredPosts.slice(0, 10).map((p: any) => ({

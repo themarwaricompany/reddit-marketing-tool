@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
 
         const apiKey = process.env.GEMINI_API_KEY;
         if (!apiKey) {
+            console.error('GEMINI_API_KEY not found in environment');
             return NextResponse.json({ error: 'Gemini API key not configured' }, { status: 500 });
         }
 
@@ -30,7 +31,8 @@ export async function POST(request: NextRequest) {
         }
 
         const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+        // Use gemini-2.0-flash which is the latest available model
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
         const results = [];
 

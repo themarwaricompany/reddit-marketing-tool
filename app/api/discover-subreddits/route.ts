@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const searchTerms = keywordsArray.length > 0 ? keywordsArray.join(', ') : topic || 'B2B SaaS, lead generation, startup growth';
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
     const prompt = `You are an expert at finding relevant Reddit communities for marketing and lead generation.
 
