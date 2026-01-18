@@ -12,7 +12,6 @@ import {
     Filter,
     Sparkles
 } from 'lucide-react';
-import ShimmerButton from "@/components/ui/shimmer-button";
 
 interface Conversation {
     id: string;
@@ -151,19 +150,17 @@ export function FindReplyView({ copyToClipboard, copiedId }: FindReplyViewProps)
                     <p className="text-xs text-muted-foreground mb-4">
                         Searching across all Reddit for high-intent conversations
                     </p>
-                    <ShimmerButton
+                    <button
                         onClick={findConversations}
                         disabled={isSearching || !keywords.trim()}
-                        className="w-full justify-center h-11 shadow-lg shadow-primary/25 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
-                        background="var(--color-primary)"
-                        shimmerColor="var(--color-secondary)"
+                        className="btn-primary w-full justify-center h-11 shadow-lg shadow-primary/25"
                     >
                         {isSearching ? (
                             <><Loader2 className="w-5 h-5 animate-spin" /> Searching...</>
                         ) : (
                             <><Search className="w-5 h-5" /> Find Conversations</>
                         )}
-                    </ShimmerButton>
+                    </button>
                 </div>
 
                 {/* Results */}
@@ -280,19 +277,17 @@ export function FindReplyView({ copyToClipboard, copiedId }: FindReplyViewProps)
                                 onChange={(e) => setReplyContext(e.target.value)}
                             />
 
-                            <ShimmerButton
+                            <button
                                 onClick={generateReply}
                                 disabled={isGeneratingReply}
-                                className="w-full justify-center h-11 shadow-lg shadow-primary/20 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
-                                background="var(--color-primary)"
-                                shimmerColor="var(--color-secondary)"
+                                className="btn-primary w-full justify-center h-11 shadow-lg shadow-primary/20"
                             >
                                 {isGeneratingReply ? (
                                     <><Loader2 className="w-5 h-5 animate-spin" /> Generating...</>
                                 ) : (
                                     <><Send className="w-5 h-5" /> Generate Reply</>
                                 )}
-                            </ShimmerButton>
+                            </button>
                         </div>
 
                         {generatedReply && (
